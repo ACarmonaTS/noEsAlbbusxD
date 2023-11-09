@@ -1,0 +1,135 @@
+.container {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  position: relative;
+  background-color: $first-color;
+
+  .information {
+    width: 812px;
+    height: 387px;
+    position: absolute;
+    top: 275px;
+    left: 60px;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+
+    .title {
+      font-size: 60px;
+      font-weight: 700;
+      color: $main-color;
+    }
+
+    .description {
+      font-size: 28px;
+      font-weight: 400;
+      color: $third-color;
+      margin: auto auto auto 0;
+    }
+
+    .btn {
+      @include btn(
+        $width: 284px,
+        $height: 59px,
+        $margin: auto auto 0 0,
+        $radius: 35px,
+        $typeBorder: none,
+        $color: $first-color,
+        $fontSize: 24px,
+        $fontWeight: 700,
+        $background: $gradient-color
+      );
+    }
+  }
+
+  .imageContainer {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: 169px;
+    right: 60px;
+  }
+}
+
+// effects
+.textEffect {
+  animation: expandText 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes expandText {
+  0% {
+    transform: translateX(-800px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.imageEffect {
+  animation: expandImage 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes expandImage {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .container {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    position: relative;
+    background-color: $first-color;
+    overflow: hidden;
+  
+    .information {
+      width: calc(100% - 50px);
+      height: auto;
+      top: 223px;
+      left: 25px;
+  
+      .title {
+        font-size: 36px;
+        margin-bottom: 30px;
+      }
+  
+      .description {
+        font-size: 24px;
+        margin: auto auto 60px 0;
+      }
+  
+      .btn {
+        @include btn(
+          $width: 222px,
+          $height: 45px,
+          $margin: auto auto 0 0,
+          $radius: 35px,
+          $typeBorder: none,
+          $color: $first-color,
+          $fontSize: 20px,
+          $fontWeight: 700,
+          $background: $gradient-color
+        );
+      }
+    }
+  
+    .imageContainer {
+      width: 600px;
+      height: 600px;
+      position: absolute;
+      top: 169px;
+      left: 25px;
+    }
+  }
+}

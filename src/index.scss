@@ -1,0 +1,71 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+// global variables
+$main-color: #ffffff;
+$first-color: #072e33;
+$second-color: #c8d96f;
+$third-color: #8cdedc;
+$gradient-color: linear-gradient(to left, $second-color, $third-color);
+
+// global functions
+@mixin btn(
+  $width: 173px,
+  $height: 44px,
+  $margin: auto 60px auto auto,
+  $radius: 25px,
+  $typeBorder: solid,
+  $borderHeight: 2px,
+  $borderColor: $third-color,
+  $color: $third-color,
+  $fontSize: 24px,
+  $fontWeight: 700,
+  $background: transparent
+) {
+  width: $width;
+  height: $height;
+  margin: $margin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $radius;
+  border: $borderHeight $typeBorder $third-color;
+  color: $color;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  background: $background;
+}
+
+// general styles
+* {
+  margin: 0;
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+}
+
+-webkit-scrollbar {
+  width: 0px;
+}
+
+body {
+  font-family: "Montserrat";
+
+  overflow-x: hidden;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a,
+link {
+  text-decoration: none;
+  cursor: default;
+}
+
+section {
+  z-index: 0;
+}
+
+
